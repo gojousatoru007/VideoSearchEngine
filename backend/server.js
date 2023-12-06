@@ -206,7 +206,7 @@ async function processData() {
           console.log('Neo4j update complete.');
 
 
-          for(let i = 0; i < mongoData.length; i++){
+          for(let i = mongoData.length/4; i < mongoData.length; i++){
             for(let j = i + 1; j < mongoData.length; j++){
               await createVideoRelationships(mongoData[i], mongoData[j]);
 
